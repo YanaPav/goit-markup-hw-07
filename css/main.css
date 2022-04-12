@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --accent-color: #2196f3;
   --text-color: #757575;
@@ -8,6 +9,19 @@
   --icon-color: #afb1b8;
   --transition-duration: 250ms;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .link-reset {
@@ -43,6 +57,17 @@ body {
   padding: 94px 0;
 }
 
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .section-title {
   text-align: center;
   font-size: 36px;
@@ -51,33 +76,6 @@ body {
   letter-spacing: 0.03em;
   margin-bottom: 50px;
 }
-
-.container {
-  width: 1200px;
-  padding: 0 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* У всех флекс-єлементов правый марджин 30, кроме хедера. Вынесла в общий класс */
-.list-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-/* Header */
 
 .flex-container {
   display: flex;
@@ -151,11 +149,10 @@ body {
 .nav-link:focus,
 .header-contact-link:hover,
 .header-contact-link:focus,
-.footer-contact-link:hover,
-.footer-contact-link:focus,
 .current {
   color: var(--accent-color);
 }
+
 .page-header .list-item {
   position: relative;
 }
@@ -171,18 +168,16 @@ body {
   border-radius: 2px;
 }
 
-/* Section Hero */
-
 .hero {
   background-color: var(--dark-background-color);
   text-align: center;
   padding: 200px 0;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/background.jpg);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background.jpg);
   background-size: 1600px;
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .main-title {
   font-weight: 900;
   font-size: 44px;
@@ -217,8 +212,6 @@ body {
   background-color: #188ce8;
 }
 
-/* Section Preferences */
-
 .section.preferences {
   padding-bottom: 0;
 }
@@ -242,26 +235,7 @@ body {
   background-color: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
-  /* background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center; */
 }
-
-/* .preferences-list .icon-antenna::before {
-  background-image: url(../images/icons/antenna.svg);
-}
-
-.preferences-list .icon-clock::before {
-  background-image: url(../images/icons/clock.svg);
-}
-
-.preferences-list .icon-diagram::before {
-  background-image: url(../images/icons/diagram.svg);
-}
-
-.preferences-list .icon-astronaut::before {
-  background-image: url(../images/icons/astronaut.svg);
-} */
 
 .preferences-list .link-icon {
   width: 70px;
@@ -283,10 +257,12 @@ body {
   color: var(--text-color);
 }
 
-/* Section Services */
-
 .services .list-item {
   position: relative;
+}
+
+.services-list {
+  display: flex;
 }
 
 .services-descr {
@@ -304,17 +280,19 @@ body {
   color: var(--secondary-text-color);
 }
 
-/* Section Team */
-
 .team {
   background-color: var(--light-background-color);
 }
 
+.team-list {
+  display: flex;
+}
+
 .team-list .list-item {
+  width: calc((100%-90px) / 4);
   background: var(--secondary-text-color);
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .team-soc-links .list-item {
@@ -328,7 +306,6 @@ body {
 .team-subtitle {
   font-weight: 500;
   color: var(--titels-color);
-  /* Цвет текста указан отдельно, поскольку inherit берет синий цвет от ссылки, в которую вложен заголовок. Можно было отдельно через клас сброса стилей (link-reset) для ссылок добавить наследование текста, но я решила просто задать цвет точечно */
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
@@ -345,13 +322,11 @@ body {
   margin-bottom: 16px;
 }
 
-.team-soc-links,
-.join .soc-links {
+.team-soc-links {
   display: flex;
 }
 
-.team-soc-links .link,
-.join .link {
+.team-soc-links .link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -377,12 +352,10 @@ body {
 .team-soc-links .link:focus .link-icon {
   fill: var(--secondary-text-color);
 }
-.team-soc-links .list-item:not(:last-child),
-.join .list-item:not(:last-child) {
+
+.team-soc-links .list-item:not(:last-child) {
   margin-right: 10px;
 }
-
-/* Section Clients */
 
 .client-list {
   display: flex;
@@ -399,8 +372,7 @@ body {
   color: var(--icon-color);
   border-radius: 4px;
   cursor: pointer;
-  transition: border-color var(--transition-duration) var(--transition-timing-function),
-    color var(--transition-duration) var(--transition-timing-function);
+  transition: border-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function);
 }
 
 .client-list .link:hover,
@@ -413,7 +385,6 @@ body {
   fill: currentColor;
 }
 
-/* Footer */
 .footer {
   background-color: var(--dark-background-color);
   padding: 60px 0;
@@ -449,6 +420,11 @@ body {
   transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
+.footer-contact-link:hover,
+.footer-contact-link:focus {
+  color: var(--accent-color);
+}
+
 .join-text {
   font-weight: 700;
   font-size: 14px;
@@ -459,7 +435,22 @@ body {
   margin-bottom: 20px;
 }
 
+.join .soc-links {
+  display: flex;
+}
+
+.join .list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .join .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -491,7 +482,7 @@ body {
 
 .footer-form {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 .footer-form-field {
@@ -542,8 +533,6 @@ body {
   margin-left: 10px;
 }
 
-/* ==================modal window================== */
-
 .backdrop {
   position: fixed;
   width: 100%;
@@ -568,9 +557,7 @@ body {
   width: 528px;
   height: 581px;
   background: #FFFFFF;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-  0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-duration) var(--transition-timing-function);
@@ -586,7 +573,7 @@ body {
   right: 13px;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -594,7 +581,6 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-
 }
 
 .close-button-icon {
@@ -603,7 +589,7 @@ body {
   transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
-.close-button:hover .close-button-icon, 
+.close-button:hover .close-button-icon,
 .close-button:focus .close-button-icon {
   fill: var(--accent-color);
 }
@@ -630,8 +616,8 @@ body {
 }
 
 .modal-inner {
- position: relative;
- margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .modal-field {
@@ -643,7 +629,7 @@ body {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  color:#000000;
+  color: #000000;
   transition: border-color var(--transition-duration) var(--transition-timing-function);
   cursor: pointer;
 }
@@ -678,14 +664,14 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: 0.01em;  
+  letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
 .custom-checkbox {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   margin: 0 7px 0 12px;
   width: 16px;
   height: 15px;
@@ -711,7 +697,7 @@ body {
 
 .agreement-field-name {
   display: flex;
-  align-items:center;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -747,10 +733,6 @@ body {
   background-color: #188CE8;
 }
 
-/* ===================  Portfolio  =================== */
-
-/* Section Portfolio */
-
 .btn-list {
   display: flex;
   justify-content: center;
@@ -770,17 +752,14 @@ body {
   color: inherit;
   background-color: var(--light-background-color);
   cursor: pointer;
-  transition: color var(--transition-duration) var(--transition-timing-function),
-    background-color var(--transition-duration) var(--transition-timing-function),
-    box-shadow var(--transition-duration) var(--transition-timing-function);
+  transition: color var(--transition-duration) var(--transition-timing-function), background-color var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio .list-item:not(:last-child) {
@@ -805,8 +784,7 @@ body {
 
 .portfolio-link:hover,
 .portfolio-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-overlay {
@@ -828,12 +806,11 @@ body {
   padding: 63px 24px;
   overflow: auto;
   transition: transform var(--transition-duration) var(--transition-timing-function);
-
 }
 
 .portfolio-link:hover .overlay-text,
 .portfolio-link:focus .overlay-text {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .portfolio-item-inner {
@@ -847,7 +824,6 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--titels-color);
-  /* Цвет текста указан отдельно, поскольку inherit берет синий цвет от ссылки, в которую вложен заголовок. Можно было отдельно через клас сброса стилей (link-reset) для ссылок добавить наследование текста, но я решила просто задать цвет точечно */
   margin-bottom: 4px;
 }
 
@@ -857,3 +833,4 @@ body {
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
+/*# sourceMappingURL=main.css.map */
