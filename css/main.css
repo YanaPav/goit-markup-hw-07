@@ -330,6 +330,10 @@ body {
   box-shadow: none;
 }
 
+.team-soc-links .list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .team-soc-links .link {
   display: flex;
   justify-content: center;
@@ -344,14 +348,8 @@ body {
   background-color: var(--accent-color);
 }
 
-.team-soc-links .link:hover .link-icon,
-.team-soc-links .link:hover .link-icon, .team-soc-links .link:focus .link-icon,
-.team-soc-links .link:focus .link-icon {
+.team-soc-links .link:hover .link-icon, .team-soc-links .link:focus .link-icon {
   fill: var(--secondary-text-color);
-}
-
-.team-soc-links .list-item:not(:last-child) {
-  margin-right: 10px;
 }
 
 .client-list {
