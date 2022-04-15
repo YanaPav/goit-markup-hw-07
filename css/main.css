@@ -182,7 +182,7 @@ body {
   background-position: center;
 }
 
-.main-title {
+.hero__title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -192,7 +192,7 @@ body {
   margin-bottom: 30px;
 }
 
-.hero-btn {
+.hero__btn {
   padding: 10px 32px;
   border-radius: 4px;
   border: none;
@@ -208,7 +208,7 @@ body {
   transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
-.hero-btn:hover, .hero-btn:focus {
+.hero__btn:hover, .hero__btn:focus {
   background-color: #188ce8;
 }
 
