@@ -2,30 +2,27 @@
     padding-bottom: 0;
 }
 
-.preferences-list,
-.services-list,
-.team-list {
+.preferences-list {
     display: flex;
-}
 
-.preferences-list .list-item,
-.team-list .list-item {
-    width: calc((100%-90px) / 4);
-}
+    .list-item {
+        width: calc((100%-90px) / 4);
+    }
 
-.preferences-list .preferences-icon-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    background-color: #f5f4fa;
-    border-radius: 4px;
-    margin-bottom: 30px;
-}
+    .preferences-icon-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        background-color: #f5f4fa;
+        border-radius: 4px;
+        margin-bottom: 30px;
+    }
 
-.preferences-list .link-icon {
-    width: 70px;
-    height: 70px;
+    .link-icon {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 .preferences-title {

@@ -16,9 +16,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--secondary-text-color);
-}
-
-.hero .main-title {
     margin-bottom: 30px;
 }
 
@@ -36,9 +33,9 @@
     background-color: var(--accent-color);
     cursor: pointer;
     transition: background-color var(--transition-duration) var(--transition-timing-function);
-}
 
-.hero-btn:hover,
-.hero-btn:focus {
-    background-color: #188ce8;
+    &:hover,
+    &:focus {
+        background-color: #188ce8;
+    }
 }

@@ -1,11 +1,17 @@
 .footer {
     background-color: var(--dark-background-color);
     padding: 60px 0;
-}
 
-.footer .container {
-    display: flex;
-    align-items: baseline;
+    .container {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .link-icon {
+        fill: var(--secondary-text-color);
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .contacts {
@@ -31,17 +37,17 @@
     color: rgba(255, 255, 255, 0.6);
     margin-top: 9px;
     transition: color var(--transition-duration) var(--transition-timing-function);
-}
 
-.footer-contact-link:hover,
-.footer-contact-link:focus {
-    color: var(--accent-color);
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 
 .join-text {
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #ffffff;
@@ -64,19 +70,12 @@
     height: 44px;
     border-radius: 50%;
     transition: background-color var(--transition-duration) var(--transition-timing-function);
-
     background-color: rgba(255, 255, 255, 0.1);
-}
 
-.join .link:hover,
-.join .link:focus {
-    background-color: var(--accent-color);
-}
-
-.footer .link-icon {
-    fill: var(--secondary-text-color);
-    width: 20px;
-    height: 20px;
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+    }
 }
 
 .footer-form-wrapper {
@@ -88,7 +87,7 @@
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--secondary-text-color);
@@ -109,14 +108,14 @@
     padding: 15px 0 15px 16px;
     margin-right: 12px;
     color: #ffffff;
-}
 
-.footer-form-field::placeholder {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.6);
+    }
 }
 
 .footer-form-btn {
@@ -127,18 +126,18 @@
     border: none;
     font-weight: 700;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 1.88;
     display: flex;
     align-items: center;
     letter-spacing: 0.06em;
     color: var(--secondary-text-color);
     cursor: pointer;
     transition: background-color var(--transition-duration) var(--transition-timing-function);
-}
 
-.footer-form-btn:hover,
-.footer-form-btn:focus {
-    background-color: #188CE8;
+    &:hover,
+    &:focus {
+        background-color: #188CE8;
+    }
 }
 
 .footer-icon-send {

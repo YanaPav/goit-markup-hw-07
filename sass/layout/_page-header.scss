@@ -6,6 +6,15 @@
 
 .page-header {
     border-bottom: 1px solid #ececec;
+
+    .link-icon {
+        fill: currentColor;
+        margin-right: 10px;
+    }
+
+    .list-item {
+        position: relative;
+    }
 }
 
 .logo {
@@ -43,6 +52,11 @@
     letter-spacing: 0.02em;
     color: inherit;
     transition: color var(--transition-duration) var(--transition-timing-function);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 
 .link-list .list-item:not(:last-child) {
@@ -59,32 +73,25 @@
     letter-spacing: 0.02em;
     color: var(--text-color);
     transition: color var(--transition-duration) var(--transition-timing-function);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 
-.page-header .link-icon {
-    fill: currentColor;
-    margin-right: 10px;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.header-contact-link:hover,
-.header-contact-link:focus,
 .current {
     color: var(--accent-color);
+
+    &::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 4px;
+        background: #2196f3;
+        border-radius: 2px;
+    }
 }
 
-.page-header .list-item {
-    position: relative;
-}
-
-.current::after {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    content: '';
-    width: 100%;
-    height: 4px;
-    background: #2196f3;
-    border-radius: 2px;
-}
